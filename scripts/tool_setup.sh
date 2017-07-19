@@ -8,7 +8,7 @@ apt-get install yosys
 #install icestorm
  apt-get install build-essential clang bison flex libreadline-dev \
                      gawk tcl-dev libffi-dev mercurial graphviz \
-                     xdot pkg-config python python3 libftdi-dev
+                     xdot pkg-config python python3
 # install pnr
 apt-get install arachne-pnr
 
@@ -25,11 +25,11 @@ apt-get install default-jre
 #install scala
 apt-get install scala
 #install sbt
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+wget http://apt.typesafe.com/repo-deb-build-0002.deb
+dpkg -i repo-deb-build-0002.deb
 apt-get update
 apt-get install sbt
-
+rm -f repo-deb-build-0002.deb
 
 ##############################################################
 # Test chisel installation 
