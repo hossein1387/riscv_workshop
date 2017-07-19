@@ -1,7 +1,6 @@
 ##############################################################
 # install opensource hw dev tool
 ##############################################################
-s
 # install git
 sudo apt-get install git
 # install yosys
@@ -33,5 +32,9 @@ sudo apt-get install sbt
 
 
 ##############################################################
-# Test chisel
+# Test chisel installation 
 ##############################################################
+wget https://raw.githubusercontent.com/hossein1387/MkChiselProj/master/mkChiselProj.sh
+chmod +x mkChiselProj.sh
+cd chisel_proj
+sbt test
