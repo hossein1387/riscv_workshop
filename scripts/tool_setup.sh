@@ -14,15 +14,16 @@ CEND='\033[0m'
 ##############################################################
 function show_package()
 {
-  IT="usage: "
-  echo "$IT"
+	echo -e "Cloning ${Green}##############################################################${CEND}"
+	echo -e "${Green} $1 ${CEND}"
+	echo -e "Cloning ${Green}##############################################################${CEND}"
 }
 
-echo -e "Cloning ${Green}##############################################################${CEND}"
 
 ##############################################################
 # install opensource hw dev tool
 ##############################################################
+show_package "install opensource hw dev tool"
 # install git
 apt-get -y install git
 # install yosys
@@ -52,7 +53,7 @@ if [[ ! -d /usr/bin/ ]]; then
 	mkdir /usr/bin
 fi
 mv sbt-launch.jar /usr/bin
-echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"$\@" >> /usr/bin/sbt
+echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\" >> /usr/bin/sbt
 chmod +x /usr/bin/sbt
 
 ##############################################################
