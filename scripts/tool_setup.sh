@@ -54,7 +54,7 @@ if [[ ! -d /usr/bin/ ]]; then
 	mkdir /usr/bin
 fi
 mv sbt-launch.jar /usr/bin
-echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\"" >> /usr/bin/sbt
+echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\" " >> /usr/bin/sbt
 chmod +x /usr/bin/sbt
 
 ##############################################################
