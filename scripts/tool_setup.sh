@@ -14,9 +14,9 @@ CEND='\033[0m'
 ##############################################################
 function show_package()
 {
-	echo -e "Cloning ${Green}##############################################################${CEND}"
-	echo -e "${Green} $1 ${CEND}"
-	echo -e "Cloning ${Green}##############################################################${CEND}"
+	echo -e "${Green}##############################################################${CEND}"
+	echo -e "				${Green} $1 ${CEND}"
+	echo -e "${Green}##############################################################${CEND}"
 }
 
 
@@ -41,6 +41,7 @@ apt-get -y install gtkwave
 ##############################################################
 #INSTALL JAVA and Scala
 ##############################################################
+show_package "INSTALL JAVA and Scala"
 #install jdk
 apt-get -y install default-jdk
 #install jre
@@ -53,12 +54,13 @@ if [[ ! -d /usr/bin/ ]]; then
 	mkdir /usr/bin
 fi
 mv sbt-launch.jar /usr/bin
-echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\" >> /usr/bin/sbt
+echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\"" >> /usr/bin/sbt
 chmod +x /usr/bin/sbt
 
 ##############################################################
 # Test chisel installation 
 ##############################################################
+show_package "Test chisel installation "
 wget https://raw.githubusercontent.com/hossein1387/MkChiselProj/master/mkChiselProj.sh
 chmod +x mkChiselProj.sh
 ./mkChiselProj.sh
