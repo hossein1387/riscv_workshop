@@ -1,35 +1,59 @@
+#!/bin/bash
+
+# Exit if error exist
+set -eu
+
+#Defining color variables:
+CSTART='\e[0;32m'
+Green='\033[0;32m'
+Red='\033[0;31m'      
+CEND='\033[0m'
+
+##############################################################
+# Utility functions are here:
+##############################################################
+function show_package()
+{
+  IT="usage: "
+  echo "$IT"
+}
+
+echo -e "Cloning ${Green}##############################################################${CEND}"
+
 ##############################################################
 # install opensource hw dev tool
 ##############################################################
 # install git
-apt-get install git
+apt-get -y install git
 # install yosys
-apt-get install yosys
+apt-get -y install yosys
 #install icestorm
- apt-get install build-essential clang bison flex libreadline-dev \
+apt-get -y install build-essential clang bison flex libreadline-dev \
                      gawk tcl-dev libffi-dev mercurial graphviz \
                      xdot pkg-config python python3
 # install pnr
-apt-get install arachne-pnr
+apt-get -y install arachne-pnr
 
 # install gtkwave
-apt-get install gtkwave
+apt-get -y install gtkwave
 
 ##############################################################
 #INSTALL JAVA and Scala
 ##############################################################
 #install jdk
-apt-get install default-jdk
+apt-get -y install default-jdk
 #install jre
-apt-get install default-jre
+apt-get -y install default-jre
 #install scala
-apt-get install scala
+apt-get -y install scala
 #install sbt
-wget http://apt.typesafe.com/repo-deb-build-0002.deb
-dpkg -i repo-deb-build-0002.deb
-apt-get update
-apt-get install sbt
-rm -f repo-deb-build-0002.deb
+wget https://repo1.maven.org/maven2/org/scala-sbt/sbt-launch/1.0.0-M4/sbt-launch.jar
+if [[ ! -d /usr/bin/ ]]; then
+	mkdir /usr/bin
+fi
+mv sbt-launch.jar /usr/bin
+echo -e "#!/bin/bash\nSBT_OPTS=\"-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M\"\njava \$SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"$\@" >> /usr/bin/sbt
+chmod +x /usr/bin/sbt
 
 ##############################################################
 # Test chisel installation 
