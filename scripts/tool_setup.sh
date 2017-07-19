@@ -36,6 +36,6 @@ apt-get install sbt
 ##############################################################
 wget https://raw.githubusercontent.com/hossein1387/MkChiselProj/master/mkChiselProj.sh
 chmod +x mkChiselProj.sh
-./mkmkChiselProj.sh
+./mkChiselProj.sh
 cd chisel_proj
 sbt test
