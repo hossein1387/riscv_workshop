@@ -38,6 +38,9 @@ apt-get -y install arachne-pnr
 # install gtkwave
 apt-get -y install gtkwave
 
+# install verilator
+apt-get install verilator
+
 ##############################################################
 #INSTALL JAVA and Scala
 ##############################################################
