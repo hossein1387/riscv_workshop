@@ -19,6 +19,13 @@ function show_package()
 	echo -e "${Green}##############################################################${CEND}"
 }
 
+##############################################################
+# install utilities
+##############################################################
+apt-get install autoconf
+apt-get install csh
+apt-get install vim
+apt-get install expect-dev
 
 ##############################################################
 # install opensource hw dev tool
@@ -41,6 +48,17 @@ apt-get -y install gtkwave
 # install verilator
 apt-get install verilator
 
+# install iverilog
+# the ubuntu packege does not point to the latest and greatest for iverilog
+# it misses g2012 flag which is needed by systemverilog.
+git clone https://github.com/steveicarus/iverilog.git
+cd iverilog 
+autoconf
+./configure
+make 
+make install
+cd ..
+rm -rf iverilog
 ##############################################################
 #INSTALL JAVA and Scala
 ##############################################################
