@@ -4,7 +4,7 @@ To be able to do the labs in the workshop, you need to install developmnet tools
 on your computer. The following is the instructions on how to install these tools
 in your computer. 
 
-There are two ways to install all the required tools on your machine. The easier way is to install docker on your machine and use the ubuntu image that I created which has all the required tools pre-installed. The other way is to use [this](https://raw.githubusercontent.com/hossein1387/riscv_workshop/master/ToolSetup/tool_setup.sh) script on your Ubuntu machine (you must have installed Ubuntu on you machine to use this script). In the following sections, I walk you through both ways.
+There are two ways to install all the required tools on your machine. The easier way is to install docker on your machine and use the ubuntu image that I created which has all the required tools pre-installed. The other way is to use [this](https://raw.githubusercontent.com/hossein1387/riscv_workshop/master/ToolSetup/tool_setup.sh) script on your Ubuntu machine (you must install Ubuntu on your machine to use this script). In the following sections, I walk you through both ways.
 
 ## Using Docker
 
@@ -18,7 +18,7 @@ After successful installation, make sure docker is running and then use the foll
 
     docker pull hossein1387/opensource_hw
 
-The image file is around 600MB so it takes some time to download the it. After
+The image file is around 600MB so it takes some time to download it. After
 that, you should be able to run it using the following command:
 
     docker run -it hossein1387/opensource_hw
@@ -48,6 +48,7 @@ The output should look like this:
     [success] Total time: 6 s, completed Jul 23, 2017 4:44:28 AM
 
 Congratulations! you just ran your first Chisel code!
+
 ## Using Script
 
 As mentioned earlier, to use the script, you first need to install Ubuntu on your computer. After that you can run the script using these commands:
@@ -57,7 +58,7 @@ As mentioned earlier, to use the script, you first need to install Ubuntu on you
     chmod +x tool_setup
     sudo ./tool_setup.sh
 
-The installation will take some time. The script will install the following tools on you machine:
+The installation will take some time. The script will install the following tools on your machine:
 
 [yosys](https://github.com/cliffordwolf/yosys.git)
 [icestorm](https://github.com/cliffordwolf/icestorm.git)
@@ -67,15 +68,7 @@ The installation will take some time. The script will install the following tool
 [iverilog](http://iverilog.icarus.com/)
 [scala and sbt for chisel](https://chisel.eecs.berkeley.edu/)
 
-To make sure everything is installed properly, you can run a basic chisel project. For that, you can use the following commands:
-
-    wget https://raw.githubusercontent.com/hossein1387/MkChiselProj/master/mkChiselProj.sh
-    chmod +x mkChiselProj.sh
-    ./mkChiselProj.sh
-    cd chisel_proj
-    sbt test
-
-The output should look like this:
+To make sure everything is installed properly, the script automatically tests the installation. It will create a simple Chisel project and runs it. If the installation was successful, the output should look like this:
 
     ======================================
     Test Pass!
