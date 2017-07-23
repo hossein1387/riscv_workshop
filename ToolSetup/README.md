@@ -2,15 +2,15 @@
 
 To be able to do the labs in the workshop, you need to install developmnet tools
 on your computer. The following is the instructions on how to install these tools
-in your computer. There are two ways to install all the required tools on your machine. The easier way is to install docker on your machine and use the ubuntu image that I created which has all the required tools pre-installed. The other way is to use [this](https://raw.githubusercontent.com/hossein1387/riscv_workshop/master/Tool%20Setup/tool_setup.sh) script on you Ubuntu machine (you must have installed Ubuntu on you machine to use this script). In the following sections, I walk you through both ways.
+in your computer. There are two ways to install all the required tools on your machine. The easier way is to install docker on your machine and use the ubuntu image that I created which has all the required tools pre-installed. The other way is to use [this](https://raw.githubusercontent.com/hossein1387/riscv_workshop/master/ToolSetup/tool_setup.sh) script on you Ubuntu machine (you must have installed Ubuntu on you machine to use this script). In the following sections, I walk you through both ways.
 
 ## Using Docker
 
-To coordinate the workshop's lab easier, I created a Docker image that have all the required tools pre-installed. This makes for efficient, lightweight, self-contained system and guarantees that software will always run the same, regardless of where it’s deployed.
+To coordinate the workshop's lab easier, I created a docker image that have all the required tools pre-installed. This makes for efficient, lightweight, self-contained system and guarantees that software will always run the same, regardless of where it’s deployed.
 
 ![alttext](../Files/DockerLogo.png)
 
-What docker allows us to do is to use a common development environment regardless of the host (user's) operating system. You can install Docker on [Windows](https://www.docker.com/docker-windows), [MascOSX](https://www.docker.com/docker-mac) and [Ubuntu](https://www.docker.com/docker-ubuntu). The installation process is pretty easy to do, so just follow the links above on docker website. I will assume you have been able to install docker on your computer.
+What docker allows us to do is to use a common development environment regardless of the host (user's) operating system. You can install docker on [Windows](https://www.docker.com/docker-windows), [MascOSX](https://www.docker.com/docker-mac) and [Ubuntu](https://www.docker.com/docker-ubuntu). The installation process is pretty easy to do, so just follow the links above on docker website. I will assume you have been able to install docker on your computer.
 
 After successful installation, make sure docker is running and then use the following command to pull the image that I created:
 
