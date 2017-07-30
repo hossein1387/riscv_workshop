@@ -23,7 +23,7 @@ function show_info()
 # Cleanup from previous instllation
 ##############################################################
 show_info "cleanup from previous installation"
-if [ -d iverilog] then
+if [ -d iverilog ]; then
 	rm -rf iverilog
 fi
 
