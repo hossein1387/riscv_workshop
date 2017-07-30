@@ -12,7 +12,7 @@ CEND='\033[0m'
 ##############################################################
 # Utility functions are here:
 ##############################################################
-function show_package()
+function show_info()
 {
 	echo -e "${Green}##############################################################${CEND}"
 	echo -e "      ${Green} $1 ${CEND}"
@@ -20,20 +20,31 @@ function show_package()
 }
 
 ##############################################################
+# Cleanup from previous instllation
+##############################################################
+show_info "cleanup from previous installation"
+if [ -d iverilog] then
+	rm -rf iverilog
+fi
+
+##############################################################
 # install utilities
 ##############################################################
+show_info "installing utilities"
+apt-get update
 apt-get install autoconf
 apt-get install csh
 apt-get install vim
 apt-get install expect-dev
-
+apt-get install gperf
 ##############################################################
 # install opensource hw dev tool
 ##############################################################
-show_package "install opensource hw dev tool"
+show_info "install opensource hw dev tool"
 # install git
 apt-get -y install git
 # install yosys
+add-apt-repository ppa:saltmakrell/ppa -y
 apt-get -y install yosys
 #install icestorm
 apt-get -y install build-essential clang bison flex libreadline-dev \
@@ -62,7 +73,7 @@ rm -rf iverilog
 ##############################################################
 #INSTALL JAVA and Scala
 ##############################################################
-show_package "INSTALL JAVA and Scala"
+show_info "INSTALL JAVA and Scala"
 #install jdk
 apt-get -y install default-jdk
 #install jre
@@ -81,7 +92,7 @@ chmod +x /usr/bin/sbt
 ##############################################################
 # Test chisel installation 
 ##############################################################
-show_package "Test chisel installation "
+show_info "Test chisel installation "
 wget https://raw.githubusercontent.com/hossein1387/MkChiselProj/master/mkChiselProj.sh
 chmod +x mkChiselProj.sh
 ./mkChiselProj.sh
