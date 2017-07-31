@@ -88,3 +88,33 @@ To make sure everything is installed properly, the script automatically tests th
     [success] Total time: 6 s, completed Jul 23, 2017 4:44:28 AM
 
 Congratulations! you just ran your first Chisel code!
+
+
+## Docker CheatSheet
+
+Here are couple of docker commands that I found myself using them often:
+
+list all containers (stopped or running):
+
+	docker ps -a 
+
+list all docker images:
+
+    docker images
+
+removes all exited containers:
+
+    docker rm $(docker ps -qf status=exited)
+
+removes container with id=CONTAINER_ID:
+
+    docker rm [CONTAINER_ID]
+    
+
+remove docker image with id=IMAGE_ID:
+
+    docker rmi [IMAGE_ID] 
+
+assuming Dockerfile exist in the current dir, builds a docker image from Dockerfile in this "." folder:
+
+    docker build -t original . 
