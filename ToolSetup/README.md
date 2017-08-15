@@ -1,8 +1,6 @@
 # Workshop Tool Setup:
 
-To be able to do the labs in the workshop, you need to install developmnet tools
-on your computer. The following is the instructions on how to install these tools
-on your computer. 
+To be able to do the labs in the workshop, you need to install developmnet tools on your computer. The following is the instructions on how to install these tools on your computer. 
 
 There are two ways to install all the required tools on your machine. The easier way is to install docker on your machine and use the ubuntu image that I created which has all the required tools pre-installed. The other way is to use [this](https://raw.githubusercontent.com/hossein1387/riscv_workshop/master/ToolSetup/tool_setup.sh) script on your Ubuntu machine (you must install Ubuntu on your machine to use this script). In the following sections, I walk you through both ways.
 
