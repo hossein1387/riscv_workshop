@@ -35,29 +35,29 @@ always @(*) begin
     state_next = state;
     case (state)
       s0: begin
-            a_next      = a_in;
-            b_next      = b_in;
-            gcd         = 32'd0;
-            state_next  = s1; 
-            done        = 0;
+            //a_next ???;
+            //b_next ???;
+            //gcd    ???;
+            //state_next ???; 
+            //done       ???;
         end
       s1: begin
         if(a!=b) begin
-            a_next= (a >= b) ? a - b : a;
-            b_next     = (b >  a) ? b - a : b;
-            gcd        = 32'd0;
-            state_next = s1;
+            //a_next ???;
+            //b_next ???;
+            //gcd    ???;
+            //state_next ???;
         end else begin
-            state_next = s2;
+            //state_next ???;
             end
         end
       s2: begin
-            gcd = a;
-            state_next = s0;
-            done = 1;
+            //gcd ???;
+            //state_next ???;
+            //done ???;
         end
         default: begin
-            state_next = s0;
+            //state_next ???;
         end
     endcase
 end
