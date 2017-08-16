@@ -43,14 +43,15 @@ initial begin
     test_id++;
   expected_val = gcd_fcn_while(a,b);
   if(expected_val==gcd) begin
-       $display("[%4d]-GCD(%4d,%4d): expected=%4d   actual=%4d  PASS", test_id, a, b, expected_val, gcd); 
+      $display("[%4d]-GCD(%4d,%4d): expected=%4d   actual=%4d  PASS", test_id, a, b, expected_val, gcd); 
   end else begin
-       $display("[%4d]-GCD(%4d,%4d): expected=%4d   actual=%4d  FAIL", test_id, a, b, expected_val, gcd);
+      $display("[%4d]-GCD(%4d,%4d): expected=%4d   actual=%4d  FAIL", test_id, a, b, expected_val, gcd);
   end
   #50ns;
   a = $urandom_range(NUM_TESTS, 10);
   b = $urandom_range(NUM_TESTS, 10);
   end
+
   if(test_result==1) begin 
       $display("Test Pass!");
   end else begin
