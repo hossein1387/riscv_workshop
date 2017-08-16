@@ -30,6 +30,7 @@ initial begin
   int NUM_TESTS = 1000;
   int expected_val = 0;
   int test_id = 0;
+  int test_result = 1;
   rst=1; 
   a = 0;
   b = 0;
@@ -47,9 +48,15 @@ initial begin
        $display("[%4d]-GCD(%4d,%4d): expected=%4d   actual=%4d  FAIL", test_id, a, b, expected_val, gcd);
   end
   #50ns;
-  a = $urandom_range(1000,10);
-  b = $urandom_range(1000,10);
+  a = $urandom_range(NUM_TESTS, 10);
+  b = $urandom_range(NUM_TESTS, 10);
   end
+  if(test_result==1) begin 
+      $display("Test Pass!");
+  end else begin
+      $display("Test Fail :(");
+  end
+
   $finish();
 end 
 
