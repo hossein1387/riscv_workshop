@@ -14,7 +14,7 @@ What docker allows us to do is to use a common development environment regardles
 
 After successful installation, make sure docker is running and then use the following command to pull the image that I created:
 
-    docker pull hossein1387/opensource_hw
+    docker pull hossein1387/opensource_hw:latest
 
 The image file is around 600MB so it takes some time to download it. After
 that, you should be able to run it using the following command:
