@@ -1,0 +1,7 @@
+generated-src
+test_run_dir
+target
+project/target
+logs
+*.key
+*.log
