@@ -2,7 +2,7 @@ SYN = yosys
 PNR = arachne-pnr
 GEN = icepack
 PROG = iceprog
-BOARD = iCEStick
+BOARD = iCE40HX8K
 
 TOP = SimpleLed.v
 PCF = $(BOARD).pcf
