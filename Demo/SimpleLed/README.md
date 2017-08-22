@@ -29,3 +29,18 @@ This should be the output:
     VERIFY OK
     cdone: high
     Bye.
+
+
+Underlying commands:
+
+For synthesis, run the following:
+
+    yosys -p 'synth_ice40 -top top -blif SimpleLed.blif' SimpleLed.v
+
+For place and route, run the following command:
+
+    arachne-pnr -d 8k -o SimpleLed.asc -p iCE40HX8K.pcf SimpleLed.blif
+
+And to pack it as a binary, run the following:
+
+    icepack SimpleLed.asc SimpleLed.bin
