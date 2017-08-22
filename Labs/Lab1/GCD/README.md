@@ -15,5 +15,7 @@ After the repository is cloned, change directory to Lab1:
 
 The lab comes with a self checking test. Since the GCD should output results on every pos edge of the clock, running the script will not pass (infinite wait). You are only asked to fill out the combinational part of the circuit. You don't need to add any more line of code. So try to just fill out the missing parts.
 
-![alttext](../../../Files/lab1.png)     
+To run the lab, run the following command:
+
+    ./do_test.cmd
 
