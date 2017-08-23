@@ -19,3 +19,8 @@ To run the lab, run the following command:
 
     ./do_test.cmd
 
+## Soloutions:
+
+You can find souloutions to this lab in the following link:
+
+    https://github.com/hossein1387/random_hw_experiments/tree/master/GCD
