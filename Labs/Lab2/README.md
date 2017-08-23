@@ -18,3 +18,9 @@ For instance for testing *Accumulator* you need to run the following command:
 
 
 You should see **TEST PASS** if your design is correct
+
+## Soloutions
+
+You can find souloutions to this lab in the following link:
+
+    https://github.com/ucb-bar/chisel-tutorial
