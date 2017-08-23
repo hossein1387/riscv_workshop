@@ -36,4 +36,9 @@ Note that all tests in a set run in parallel.
 Finally, to run all the tests, just in sbt:
 
     > test
-    
+
+## Soloutions
+
+You can find souloutions to this lab in the following link:
+
+    https://github.com/ucb-bar/riscv-mini
