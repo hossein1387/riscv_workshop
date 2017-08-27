@@ -116,3 +116,15 @@ remove docker image with id=IMAGE_ID:
 assuming Dockerfile exist in the current dir, builds a docker image from Dockerfile in this "." folder:
 
     docker build -t original . 
+
+Stop a container with id=CONTAINER_ID:
+
+    docker stop [CONTAINER_ID]
+
+Start a stopped (exited) container with id=CONTAINER_ID:
+
+    docker start [CONTAINER_ID]
+
+Get bash access to a container with id=CONTAINER_ID:
+
+     docker exec -ti [CONTAINER_ID] bash
