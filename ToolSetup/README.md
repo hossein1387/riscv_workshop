@@ -128,3 +128,8 @@ Start a stopped (exited) container with id=CONTAINER_ID:
 Get bash access to a container with id=CONTAINER_ID:
 
      docker exec -ti [CONTAINER_ID] bash
+     
+Commit changes in a a container with id=CONTAINER_ID:
+
+    sudo docker commit [CONTAINER_ID]  [NEW_IMAGE_NAME]
+    
