@@ -102,7 +102,7 @@ list all docker images:
 
 removes all exited containers:
 
-    docker rm $(docker ps -qf status=exited)
+    docker container rm $(docker container ls -q -f 'status=exited')
 
 removes container with id=CONTAINER_ID:
 
